@@ -1,0 +1,164 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: blue;
+    background-color: #141414;
+}
+
+img{
+    width: 100%;
+}
+
+p{
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.showcase::after{
+    content: '';
+    height: 100vh;
+    width: 100%;
+    background-image: url('/img/showcase.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+   -webkit-filter: blur(5px);
+   filter: blur(5px);
+   transition: 800ms;
+}
+
+.showcase:hover::after{
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+.showcase-top{
+    position: absolute;
+    z-index: 1;
+    top: 8%;
+    left: 50%;
+    margin-top: 105px;
+    margin-left: -145px;
+    width: 300px;
+    height: 350px;
+    text-align: center;
+    transition: all 1000ms;
+}
+
+.showcase-top:hover{
+    -webkit-filter: blur(1px);
+    filter: blur(1px); 
+}
+
+
+.showcase-top img{
+    width: 170px;
+    z-index: 2;
+}
+
+.showcase h1{
+    font-size: 56px;
+    color: white;
+}
+
+.showcase p{
+    font-size: 25px;
+    margin: 20px 0;
+    color: white;
+}
+
+.btn{
+    text-decoration: none;
+    color: #141414;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.btn:hover{
+    opacity: 0.8;
+}
+
+
+.container{
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 4rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    color: white;
+}
+
+.container > div{
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.wrapper{
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 4rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    text-align: center;
+}
+
+
+
+.bg-light{
+    background-color: #fff;
+    color : #333;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+}
+
+@media (max-width: 700px){
+    .showcase::after{
+        height: 80vh;
+    }
+
+    .showcase-top{
+        margin-top: 30px;
+    }
+
+    .showcase-content h1{
+        font-size: 3rem;
+    }
+
+   .showcase-content p{
+    display: none;
+   }
+
+    .container{
+        grid-template-columns: 1fr;
+    }
+
+    .wrapper{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-height: 500px){
+    .showcase-top{
+        margin-top: 20px;
+    }
+
+    .showcase-content h1{
+        font-size: 2rem;
+    }
+
+    .showcase-content p{
+        display: none;
+    }
+}
